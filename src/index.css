@@ -1,69 +1,109 @@
+@font-face {
+  font-family: "trenda-700";
+  src: url("/fonts/subset-FONTSPRINGDEMO-TrendaBoldRegular.woff2")
+      format("woff2"),
+    url("/fonts/subset-FONTSPRINGDEMO-TrendaBoldRegular.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "trenda-400";
+  src: url("/fonts/subset-FONTSPRINGDEMO-TrendaRegular.woff2") format("woff2"),
+    url("/fonts/subset-FONTSPRINGDEMO-TrendaRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "trenda-600";
+  src: url("/fonts/subset-FONTSPRINGDEMO-TrendaSemiboldRegular.woff2")
+      format("woff2"),
+    url("/fonts/subset-FONTSPRINGDEMO-TrendaSemiboldRegular.woff")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --gray-100: #e3e6ea;
+  --gray-200: #d0dae1;
+  --gray-500: #5e6d7c;
+  --gray-600: #4d697c;
+  --gray-700: #454d59;
+  --gray-900: #373b42;
+  --gray-950: #212930;
+  --blue-600: #039db7;
+  --blue-700: #0a7d94;
+  --blue-800: #126478;
+  --green-700: #00a8b5;
+
+  --ff-trenda: "trenda-400", sans-serif;
+  --ff-trenda-600: "trenda-600", sans-serif;
+  --ff-trenda-700: "trenda-700", sans-serif;
+  --fc-primary: var(--gray-900);
+  --fc-secondary: var(--gray-950);
+  --fc-tertiary: var(--gray-600);
+  --fc-quaternary: var(--gray-500);
+  --fc-quinary: white;
+
+  --bg-primary: white;
+  --bg-secondary: var(--gray-100);
+
+  font-size: 62.5%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  margin: 0 auto;
   min-height: 100vh;
+  font-family: var(--ff-trenda);
+  font-size: 1.6rem;
+  background-color: var(--bg-primary);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+ul {
+  list-style: none;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.container {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.logo-wrapper span {
+  font-family: var(--ff-trenda-700);
+  font-size: 1rem;
+  color: var(--green-700);
+  text-transform: uppercase;
 }

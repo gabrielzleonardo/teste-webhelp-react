@@ -1,0 +1,32 @@
+footer {
+  background-color: var(--green-700);
+  padding: 4.4rem 0;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+footer .image-wrapper {
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: solid 1px white;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--fc-quinary);
+}
+
+.footer-nav p {
+  font-size: 1.8rem;
+  font-family: var(--ff-trenda-700);
+}
+
+.footer-nav ul li + li {
+  margin-top: 2rem;
+}
