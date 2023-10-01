@@ -1,0 +1,14 @@
+.service-card.card {
+  gap: 1.8rem;
+  color: var(--fc-quinary);
+  min-height: 300px;
+}
+
+.service-card.card img {
+  aspect-ratio: 1/1;
+  max-width: 8rem;
+}
+
+.service-card.card p {
+  font-size: 3.6rem;
+}

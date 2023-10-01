@@ -4,6 +4,16 @@ export interface ILayout {
   children: ReactNode;
 }
 
+export interface ITextInput {
+  label: string;
+  placeholder: string;
+  disabled?: boolean;
+  alertIsOpen?: boolean;
+  type?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
 export interface IAutoLink {
   title?: string;
   href: string;
@@ -15,6 +25,8 @@ export interface ICard {
   cardLabel: string;
   cardImage: string;
   cardTitle?: string;
+  i?: number;
+  id: number;
 }
 
 export interface IIconLink {
@@ -22,29 +34,15 @@ export interface IIconLink {
   link: IAutoLink;
 }
 
-export interface IContent {
-  type: string;
-  id: number;
-  title?: string;
-  label?: string;
-}
-
-export interface ITextContent extends IContent {
-  description: string;
-}
-
-export interface IImageContent extends IContent {
-  title: string;
-  description: string;
-}
-
 export interface IFormFields {
+  id: number;
   fieldTitle: string;
   fieldType: string;
   placeholder: string;
 }
 
 export interface IFormOptions {
+  id: number;
   formTitle: string;
   formValue: string;
   formFields: IFormFields[];
@@ -54,10 +52,17 @@ export interface ILoginForm {
   formLabel: string;
   formOptions: IFormOptions[];
 }
+
+export interface IContent {
+  type: string;
+  id: number;
+  title?: string;
+  label?: string;
+}
 export interface IBannerOne extends IContent {
   title: string;
-  loginForm: ILoginForm;
-  bacgroundImage: string;
+  loginFormData: ILoginForm;
+  backgroundImage: string;
 }
 export interface IBenefits extends IContent {
   cards: ICard[];
@@ -73,9 +78,15 @@ export interface IGetStarted extends IContent {
 
 export interface IQuestion {
   questionTitle: string;
-  qeustionAnswer: string;
+  questionAnswer: string;
+  id: number;
+}
+
+export interface IAccordion {
+  questions: IQuestion[];
 }
 
 export interface IFaq extends IContent {
   questions: IQuestion[];
 }
+

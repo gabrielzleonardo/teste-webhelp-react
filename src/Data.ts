@@ -4,19 +4,22 @@ const Data = {
       id: 1,
       type: "bannerOne",
       title: "Tenha a melhor experiência",
-      form: {
+      loginFormData: {
         formLabel: "Tipo de perfil",
         formOptions: [
           {
+            id: 1,
             formTitle: "Pessoa Física",
             formValue: "fisica",
             formFields: [
               {
+                id: 1,
                 fieldTitle: "CPF",
                 fieldType: "text",
                 placeholder: "000.000.000-00",
               },
               {
+                id: 2,
                 fieldTitle: "Data de nascimento",
                 fieldType: "date",
                 placeholder: "00/00/0000",
@@ -24,18 +27,21 @@ const Data = {
             ],
           },
           {
+            id: 2,
             formTitle: "Pessoa Jurídica",
             formValue: "juridica",
             formFields: [
               {
+                id: 1,
                 fieldTitle: "CNPJ",
                 fieldType: "text",
                 placeholder: "00.000.000/0000-00",
               },
               {
-                fieldTitle: "Data de nascimento",
-                fieldType: "date",
-                placeholder: "00/00/0000",
+                id: 2,
+                fieldTitle: "Inscrição estadual",
+                fieldType: "text",
+                placeholder: "Isento",
               },
             ],
           },
@@ -49,7 +55,7 @@ const Data = {
       cards: [
         {
           cardLabel: "Negociação",
-          cardImage: "/images/",
+          cardImage: "/images/cards/benefits1.webp",
           cardtitle: "Negociação rápida e segura.",
         },
         {
@@ -93,30 +99,34 @@ const Data = {
     },
     {
       id: 4,
-      type: "get_started",
+      type: "getStarted",
       title: "Comece agora!",
       label: "Veja como é fácil e seguro.",
       cards: [
         {
-          cardtitle: "Login",
+          id: 1,
+          cardTitle: "Login",
           cardLabel: "Insira seus dados de acesso",
-          cardImage: "/images/",
+          cardImage: "/images/cardgetstarted1.webp",
         },
         {
-          cardtitle: "Token",
+          id: 2,
+          cardTitle: "Token",
           cardLabel:
             "Insira o código recebido em seu celular ou e-mail cadastrado.",
-          cardImage: "/images/",
+          cardImage: "/images/cardgetstarted2.webp",
         },
         {
-          cardtitle: "Contrato",
+          id: 3,
+          cardTitle: "Contrato",
           cardLabel: "Selecione o contrato que gostaria de negociar.",
-          cardImage: "/images/",
+          cardImage: "/images/Group8864.webp",
         },
         {
-          cardtitle: "Pronto",
+          id: 4,
+          cardTitle: "Pronto",
           cardLabel: "Agora é só escolher a forma de pagamento.",
-          cardImage: "/images/",
+          cardImage: "/images/group.png",
         },
       ],
     },
@@ -127,31 +137,37 @@ const Data = {
       label: "Tire suas duvidas.",
       questions: [
         {
+          id: 1,
           questionTitle: "Quais débitos consigo consultar?",
           questionAnswer:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
         },
         {
+          id: 2,
           questionTitle: "Posso negociar todas as parcelas?",
           questionAnswer:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
         },
         {
+          id: 3,
           questionTitle: "Consigo informar que já fiz o pagamento?",
           questionAnswer:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
         },
         {
+          id: 4,
           questionTitle: "Qual o prazo para a baixa do pagamento?",
           questionAnswer:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
         },
         {
+          id: 5,
           questionTitle: "Este portal é seguro?",
           questionAnswer:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
         },
         {
+          id: 6,
           questionTitle: "Preciso pagar algum valor para acessar?",
           questionAnswer:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
@@ -160,29 +176,29 @@ const Data = {
     },
   ],
   footer: {
-    nav_about: {
-      nav_title: "Sobre",
-      nav_links: [
-        { link_title: "Quem somos", link_href: "#" },
-        { link_title: "Política de privacidade", link_href: "#" },
+    navAbout: {
+      navTitle: "Sobre",
+      navLinks: [
+        { linkTitle: "Quem somos", linkHref: "#" },
+        { linkTitle: "Política de privacidade", linkHref: "#" },
       ],
     },
-    nav_contact: {
-      nav_title: "Fale com a gente",
-      nav_links: [
-        { link_image: "/images/", link_href: "#" },
-        { link_image: "/images/", link_href: "#" },
-        { link_image: "/images/", link_href: "#" },
-        { link_image: "/images/", link_href: "#" },
+    navContact: {
+      navTitle: "Fale com a gente",
+      navLinks: [
+        { linkImage: "/images/", linkHref: "#" },
+        { linkImage: "/images/", linkHref: "#" },
+        { linkImage: "/images/", linkHref: "#" },
+        { linkImage: "/images/", linkHref: "#" },
       ],
     },
-    payment_methods: {
+    paymentMethods: {
       title: "Formas de pagamento",
       methods: [
-        { method_image: "/images/" },
-        { method_image: "/images/" },
-        { method_image: "/images/" },
-        { method_image: "/images/" },
+        { methodImage: "/images/" },
+        { methodImage: "/images/" },
+        { methodImage: "/images/" },
+        { methodImage: "/images/" },
       ],
     },
   },

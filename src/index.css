@@ -43,16 +43,33 @@
   -webkit-text-size-adjust: 100%;
 
   --gray-100: #e3e6ea;
-  --gray-200: #d0dae1;
+  --gray-200: #cad1d7;
+  --gray-300: #a5b0bb;
   --gray-500: #5e6d7c;
   --gray-600: #4d697c;
   --gray-700: #454d59;
   --gray-900: #373b42;
   --gray-950: #212930;
+
+  --cool-gray-50: #f6f8f9;
+  --cool-gray-100: #ebeff3;
+  --cool-gray-200: #dbe0e9;
+  --cool-gray-300: #aec0cb;
+  --cool-gray-400: #9ca3af;
+  --cool-gray-500: #628295;
+  --cool-gray-600: #5f6d72;
+
+  --blue-400: #3a65ff;
+  --blue-500: #00bed2;
   --blue-600: #039db7;
   --blue-700: #0a7d94;
   --blue-800: #126478;
+
   --green-700: #00a8b5;
+  --green-900: #007380;
+
+  --bd-color-invalid-input: #cc3262;
+  --bg-color-invalid-input: #ffeff0;
 
   --ff-trenda: "trenda-400", sans-serif;
   --ff-trenda-600: "trenda-600", sans-serif;
@@ -86,12 +103,33 @@ a {
   color: inherit;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="date"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 .container {
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
+}
+
+section {
+  padding: 6rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .logo-wrapper {
@@ -106,4 +144,18 @@ a {
   font-size: 1rem;
   color: var(--green-700);
   text-transform: uppercase;
+}
+
+.card {
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  width: 100%;
+  font-family: var(--ff-trenda-700);
+  overflow: hidden;
+}
+
+.anchor {
+  margin: 0 auto;
 }

@@ -1,0 +1,56 @@
+section.benefits {
+  background-color: var(--bg-secondary);
+}
+
+.benefits h2 {
+  font-size: 2.8rem;
+  color: var(--fc-primary);
+}
+.benefits h2 strong {
+  font-family: var(--ff-trenda-700);
+}
+
+.benefits .cards-wrapper {
+  display: flex;
+
+  gap: 2rem;
+  overflow-x: auto;
+}
+
+.benefits .cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.benefits .cards-wrapper .card {
+  gap: 2rem;
+  min-width: 340px;
+  max-height: 300px;
+}
+
+.card-1 {
+  background-color: white;
+  color: var(--gray-950);
+}
+
+.card-1 p,
+.card-3 p {
+  font-size: 2.2rem;
+}
+
+.card-1 img {
+  aspect-ratio: 1/1;
+  max-width: 12rem;
+}
+
+.card-2,
+.card-3 {
+  color: var(--fc-quinary);
+}
+
+.card-2 {
+  background-color: var(--gray-950);
+}
+
+.card-3 {
+  background-color: #4d697c;
+}

@@ -1,0 +1,26 @@
+.login-form {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.login-form span {
+  color: var(--cool-gray-600);
+  font-size: 1.4rem;
+}
+
+.form-selector-wrapper {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.login-form .form-wrapper + button {
+  margin-top: 2rem;
+}

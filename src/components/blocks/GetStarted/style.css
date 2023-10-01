@@ -1,0 +1,28 @@
+section.get-started {
+  background-color: var(--bg-secondary);
+}
+
+section.get-started h2 {
+  font-family: var(--ff-trenda-700);
+  color: var(--fc-primary);
+  font-size: 2.8rem;
+  margin-bottom: 6px;
+}
+
+.get-started .title-wrapper {
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 1.8rem;
+}
+
+.get-started .cards-wrapper .carousel {
+  flex-wrap: nowrap;
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.get-started .cards-wrapper .carousel::-webkit-scrollbar {
+  display: none;
+}

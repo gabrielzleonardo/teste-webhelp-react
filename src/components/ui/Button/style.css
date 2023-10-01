@@ -1,0 +1,64 @@
+.button {
+  font-family: var(--ff-trenda-700);
+  padding: 1.2rem 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.6rem;
+  transition-duration: 500ms;
+  transition-property: background-color, outline-color;
+}
+
+.button-lg {
+  font-size: 1.8rem;
+  padding: 1rem;
+}
+
+.primary-button {
+  background-color: var(--blue-600);
+  color: var(--fc-quinary);
+}
+
+.primary-button:hover {
+  background-color: var(--blue-700);
+}
+
+.primary-button:active {
+  background-color: var(--blue-800);
+  outline: solid 2px var(--blue-400);
+}
+
+.primary-button:focus {
+  outline: solid 2px var(--blue-500);
+}
+
+.primary-button:disabled {
+  background-color: var(--gray-200);
+  color: var(--gray-300);
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  color: var(--cool-gray-500);
+  background-color: white;
+  outline: solid 1px var(--cool-gray-300);
+}
+
+.secondary-button:hover {
+  background-color: var(--cool-gray-50);
+  outline-color: var(--cool-gray-500);
+}
+
+.secondary-button:active {
+  outline: solid 2px var(--cool-gray-500);
+}
+
+.secondary-button:focus {
+  outline: solid 2px var(--blue-700);
+}
+
+.secondary-button:disabled {
+  background-color: var(--cool-gray-100);
+  color: var(--cool-gray-300);
+  outline: none;
+  cursor: not-allowed;
+}
