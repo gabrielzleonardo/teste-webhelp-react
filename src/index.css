@@ -156,4 +156,13 @@ section {
   overflow: hidden;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    padding-right: 18rem;
+    padding-left: 18rem;
+  }
 
+  section {
+    gap: 4rem;
+  }
+}
