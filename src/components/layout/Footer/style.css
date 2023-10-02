@@ -1,10 +1,10 @@
 footer {
-  background-color: var(--green-700);
+  background-color: var(--blue-700);
   padding: 4.4rem 0;
   color: var(--fc-quinary);
 }
 
-footer > div {
+footer > div.container {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -14,6 +14,12 @@ footer .image-wrapper {
   width: 100%;
   padding-bottom: 2rem;
   border-bottom: solid 1px white;
+}
+
+footer div.navs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .footer-nav {
@@ -79,4 +85,21 @@ footer .image-wrapper {
 
 .under-footer > div:last-child span {
   display: inline-block;
+}
+
+@media (min-width: 768px) {
+  footer > div.container {
+    gap: 6rem;
+  }
+  footer div.navs-wrapper {
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  footer .copyright-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

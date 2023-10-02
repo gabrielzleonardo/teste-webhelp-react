@@ -2,7 +2,13 @@ section.banner-one {
   background-image: url("/images/banner-bg.webp");
   background-repeat: no-repeat;
   background-position: 40%;
-  
+  background-size: cover;
+}
+
+.banner-one .title-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .banner-one h1 {
@@ -30,4 +36,23 @@ h1 span {
 .mouse-anchor-wrapper span {
   color: var(--fc-quinary);
   font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  .banner-one .title-form-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.banner-one {
+    background-position-y: 20%;
+    background-origin: border-box;
+  }
+
+  .banner-one h1 {
+    font-size: 4rem;
+  }
 }

@@ -13,66 +13,71 @@ const Footer = () => {
         <div className="image-wrapper">
           <img src="/images/webhelp-2.svg" alt="Logo branca Webhelp" />
         </div>
-        <div className="footer-nav about-nav">
-          <p>
-            <strong>{aboutNav.navTitle}</strong>
-          </p>
-          <ul>
-            {aboutNav.navLinks.map(({ id, title, href }: IFooterLink) => (
-              <li key={id}>
-                <AutoLink href={href} title={title}>
-                  {title}
-                </AutoLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="footer-nav contact-nav">
-          <p>
-            <strong>{contactNav.navTitle}</strong>
-          </p>
-
-          <ul>
-            {contactNav.navLinks.map(({ id, image, href }: IFooterLink) => (
-              <li key={id}>
-                <IconLinkOrDiv image={image} href={href} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="footer-nav payments-nav">
-          <p>
-            <strong>{paymentMethods.title}</strong>
-          </p>
-
-          <ul>
-            {paymentMethods.methods.map(
-              ({ methodImage, id }: { methodImage: string; id: number }) => (
-                <li key={id}>
-                  <IconLinkOrDiv image={methodImage} />
-                </li>
-              )
-            )}
-          </ul>
-        </div>
-        <p>© 2023. Todos direitos reservados à Webhelp</p>
-        <div className="under-footer">
-          <div>
-            <img
-              width={50}
-              height={29}
-              src="/images/webhelp-2.svg"
-              alt="Logo webhelp"
-            />
+        <div className="navs-wrapper">
+          <div className="footer-nav about-nav">
             <p>
-              plataforma desenvolvida pela <strong>webhelp</strong>
+              <strong>{aboutNav.navTitle}</strong>
             </p>
+            <ul>
+              {aboutNav.navLinks.map(({ id, title, href }: IFooterLink) => (
+                <li key={id}>
+                  <AutoLink href={href} title={title}>
+                    {title}
+                  </AutoLink>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div>
-            <img width={32} height={32} src="images/ssl.png" alt="SSL" />
+          <div className="footer-nav contact-nav">
+            <p>
+              <strong>{contactNav.navTitle}</strong>
+            </p>
+
+            <ul>
+              {contactNav.navLinks.map(({ id, image, href }: IFooterLink) => (
+                <li key={id}>
+                  <IconLinkOrDiv image={image} href={href} />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="footer-nav payments-nav">
+            <p>
+              <strong>{paymentMethods.title}</strong>
+            </p>
+
+            <ul>
+              {paymentMethods.methods.map(
+                ({ methodImage, id }: { methodImage: string; id: number }) => (
+                  <li key={id}>
+                    <IconLinkOrDiv image={methodImage} />
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        </div>
+
+        <div className="copyright-wrapper">
+          <p>© 2023. Todos direitos reservados à Webhelp</p>
+          <div className="under-footer">
             <div>
-              <strong>Site protegido</strong>
-              <span>certificado SSL</span>
+              <img
+                width={50}
+                height={29}
+                src="/images/webhelp-2.svg"
+                alt="Logo webhelp"
+              />
+              <p>
+                plataforma desenvolvida pela <strong>webhelp</strong>
+              </p>
+            </div>
+            <div>
+              <img width={32} height={32} src="images/ssl.png" alt="SSL" />
+              <div>
+                <strong>Site protegido</strong>
+                <span>certificado SSL</span>
+              </div>
             </div>
           </div>
         </div>

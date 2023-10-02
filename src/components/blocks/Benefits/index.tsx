@@ -32,8 +32,10 @@ const Benefits = () => {
         <div className="card card-2">
           <span>Navegação fácil</span>
           <img
-            src="/images/phonewithapp.webp"
+            src="/images/image-76.png"
             alt="Ícone ilustrativo de um documento"
+            width={385}
+            height={547}
           />
         </div>
         <div className="card card-3">

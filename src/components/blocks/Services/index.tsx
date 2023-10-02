@@ -5,7 +5,7 @@ import ChevronAnchorLink from "../../nav/ChevronAnchorLink";
 const Services = () => {
   return (
     <section id="services" className="services">
-      <div className="title-wrapper">
+      <div className="section-title">
         <h2>Atendimento personalizado</h2>
         <p>Diversos canais, para cada necessidade.</p>
       </div>

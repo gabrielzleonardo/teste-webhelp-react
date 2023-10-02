@@ -16,7 +16,6 @@ section.get-started h2 {
 }
 
 .get-started .cards-wrapper .carousel {
-  flex-wrap: nowrap;
   display: flex;
   gap: 2rem;
   overflow: hidden;

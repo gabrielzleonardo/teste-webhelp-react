@@ -45,7 +45,7 @@ const GetStarted = ({ title, label, cards }: IGetStarted) => {
   }, []);
   return (
     <section id="get-started" className="get-started">
-      <div className="title-wrapper">
+      <div className="section-title">
         <h2>{title}</h2>
         <p>{label}</p>
       </div>

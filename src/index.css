@@ -132,6 +132,24 @@ section {
   gap: 3rem;
 }
 
+section .section-title {
+  text-align: center;
+}
+
+section .section-title h2 {
+  font-family: var(--ff-trenda-700);
+  color: var(--fc-primary);
+  font-size: 2.8rem;
+  margin-bottom: 6px;
+}
+
+section .section-title p {
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 1.8rem;
+  font-family: var(--ff-trenda);
+}
+
 .logo-wrapper {
   display: flex;
   align-items: start;
@@ -156,4 +174,28 @@ section {
   overflow: hidden;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    padding-right: 18rem;
+    padding-left: 18rem;
+  }
 
+  section {
+    gap: 4rem;
+  }
+
+  section .section-title h2 {
+    font-size: 4rem;
+  }
+
+  section .section-title p {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-right: 24rem;
+    padding-left: 24rem;
+  }
+}
