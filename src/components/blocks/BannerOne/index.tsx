@@ -1,6 +1,7 @@
+
 import LoginForm from "../../global/forms/LoginForm";
 import AutoLink from "../../nav/AutoLink";
-import IconLink from "../../ui/IconLinkOrDiv";
+
 import "./style.css";
 const BannerOne = () => {
   return (
