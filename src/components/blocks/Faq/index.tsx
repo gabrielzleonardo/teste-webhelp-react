@@ -2,7 +2,7 @@ import { IFaq } from "../../../types";
 import "./style.css";
 import Accordion from "../../global/Accordion";
 const Faq = ({ questions }: IFaq) => {
-  // console.log(questions);
+
   return (
     <section id="faq" className="faq container">
       <div className="title-wrapper">

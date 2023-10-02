@@ -1,9 +1,9 @@
-import { IAccordion, IQuestion } from "../../../types";
 import "./style.css";
-
+import { IAccordion, IQuestion } from "../../../types";
 import { useState } from "react";
+
 const Accordion = ({ questions }: IAccordion) => {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState<number | null>(null);
 
   const selectItem = (i: number) => {
     setSelected(i);
@@ -24,11 +24,16 @@ const Accordion = ({ questions }: IAccordion) => {
           i: number
         ) => (
           <div key={id} className="accordion--item">
-            <div className="question-title-wrapper">
+            <div
+              onClick={() => selectItem(i)}
+              className="question-title-wrapper"
+              aria-expanded={isSelected(i)}
+              role="button"
+            >
               <h3>{question}</h3>
               <button
                 className={isSelected(i) ? "rotate" : ""}
-                onClick={() => selectItem(i)}
+               
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,16 +70,14 @@ const Accordion = ({ questions }: IAccordion) => {
               </button>
             </div>
 
-            <div className="accordion--content-wrapper">
-              <div
-                className={`${
-                  isSelected(i)
-                    ? "accordion--content accordion--content__show"
-                    : "accordion--content"
-                }`}
-              >
-                {answer}
-              </div>
+            <div
+              className={`${
+                isSelected(i)
+                  ? "accordion--content accordion--content__show"
+                  : "accordion--content"
+              }`}
+            >
+              {answer}
             </div>
           </div>
         )

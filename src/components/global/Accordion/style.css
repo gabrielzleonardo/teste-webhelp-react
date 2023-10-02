@@ -6,7 +6,12 @@
 .accordion button {
   border: none;
   background: none;
-  transition: 500ms;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.accordion--item {
+  border-bottom: solid 1px white;
 }
 
 .question-title-wrapper {
@@ -17,10 +22,7 @@
   font-family: var(--ff-trenda-700);
   font-size: 1.8rem;
   padding: 1.8rem 1rem;
-}
-
-.accordion--item {
-  border-bottom: solid 1px white;
+  cursor: pointer;
 }
 
 .rotate {
@@ -29,15 +31,10 @@
 }
 
 .accordion--content {
-  transition: all 500ms cubic-bezier(1, 1, 0, 1);
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 1rem;
+  display: none;
 }
 
 .accordion--content.accordion--content__show {
-  padding-bottom: 3rem;
-  height: auto;
-  max-height: 9999px;
-  transition: all 1000ms cubic-bezier(1, 0, 1, 0);
+  display: block;
+  padding: 0 1rem 3rem;
 }
