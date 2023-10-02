@@ -1,5 +1,6 @@
 import LoginForm from "../../global/forms/LoginForm";
-import IconLink from "../../ui/IconLink";
+import AutoLink from "../../nav/AutoLink";
+import IconLink from "../../ui/IconLinkOrDiv";
 import "./style.css";
 const BannerOne = () => {
   return (
@@ -8,13 +9,15 @@ const BannerOne = () => {
         <span>Tenha aqui</span> <span>a melhor</span> <span>experiência</span>
       </h1>
       <LoginForm />
-      <div className="mouse-anchor-wrapper">
-        <IconLink
-          link={{ href: "#benefits", title: "Saiba mais" }}
-          imageSrc="/images/mouse-icon.svg"
-        />
+
+      <AutoLink
+        href="#benefits"
+        title="Saiba mais"
+        className="mouse-anchor-wrapper"
+      >
+        <img src="/images/mouse-icon.svg" alt="Ícone de um mouse" />
         <span>Saiba mais</span>
-      </div>
+      </AutoLink>
     </section>
   );
 };

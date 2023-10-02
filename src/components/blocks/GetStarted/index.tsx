@@ -2,7 +2,8 @@ import "./style.css";
 import { RefObject, useEffect, useRef } from "react";
 import { IGetStarted } from "../../../types";
 import GetStartedCard from "../../ui/Cards/GetStartedCard";
-import IconLink from "../../ui/IconLink";
+
+import ChevronAnchorLink from "../../nav/ChevronAnchorLink";
 
 const GetStarted = ({ title, label, cards }: IGetStarted) => {
   const carouselRef: RefObject<HTMLDivElement> = useRef(null);
@@ -55,10 +56,7 @@ const GetStarted = ({ title, label, cards }: IGetStarted) => {
           ))}
         </div>
       </div>
-      <IconLink
-        imageSrc="/images/chevron-down.svg"
-        link={{ href: "#faq", className: "anchor" }}
-      />
+      <ChevronAnchorLink href="#faq" />
     </section>
   );
 };

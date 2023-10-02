@@ -1,4 +1,5 @@
-import IconLink from "../../ui/IconLink";
+import ChevronAnchorLink from "../../nav/ChevronAnchorLink";
+
 import "./style.css";
 const Benefits = () => {
   return (
@@ -49,10 +50,7 @@ const Benefits = () => {
           />
         </div>
       </div>
-      <IconLink
-        imageSrc="/images/chevron-down.svg"
-        link={{ href: "#services", className: "anchor" }}
-      />
+      <ChevronAnchorLink href="#services" />
     </section>
   );
 };

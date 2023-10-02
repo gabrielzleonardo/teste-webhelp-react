@@ -176,29 +176,29 @@ const Data = {
     },
   ],
   footer: {
-    navAbout: {
+    aboutNav: {
       navTitle: "Sobre",
       navLinks: [
-        { linkTitle: "Quem somos", linkHref: "#" },
-        { linkTitle: "Política de privacidade", linkHref: "#" },
+        { id: 1, title: "Quem somos", href: "#" },
+        { id: 2, title: "Política de privacidade", href: "#" },
       ],
     },
-    navContact: {
+    contactNav: {
       navTitle: "Fale com a gente",
       navLinks: [
-        { linkImage: "/images/", linkHref: "#" },
-        { linkImage: "/images/", linkHref: "#" },
-        { linkImage: "/images/", linkHref: "#" },
-        { linkImage: "/images/", linkHref: "#" },
+        { id: 1, image: "/images/email.svg", href: "#" },
+        { id: 2, image: "/images/whatsapp.svg", href: "#" },
+        { id: 3, image: "/images/phone.svg", href: "#" },
+        { id: 4, image: "/images/text.svg", href: "#" },
       ],
     },
     paymentMethods: {
       title: "Formas de pagamento",
       methods: [
-        { methodImage: "/images/" },
-        { methodImage: "/images/" },
-        { methodImage: "/images/" },
-        { methodImage: "/images/" },
+        { id: 1, methodImage: "/images/Brand-PIX.webp" },
+        { id: 2, methodImage: "/images/creditcard.svg" },
+        { id: 3, methodImage: "/images/barcode.svg" },
+        { id: 4, methodImage: "/images/gpay.svg" },
       ],
     },
   },

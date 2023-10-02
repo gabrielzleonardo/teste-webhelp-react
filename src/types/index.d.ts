@@ -21,6 +21,11 @@ export interface IAutoLink {
   children?: ReactNode;
 }
 
+export interface IFooterLink extends IAutoLink {
+  id: number;
+  image?: string;
+}
+
 export interface ICard {
   cardLabel: string;
   cardImage: string;
@@ -89,4 +94,3 @@ export interface IAccordion {
 export interface IFaq extends IContent {
   questions: IQuestion[];
 }
-

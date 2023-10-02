@@ -65,14 +65,16 @@ const Accordion = ({ questions }: IAccordion) => {
               </button>
             </div>
 
-            <div
-              className={`${
-                isSelected(i)
-                  ? "accordion--content accordion--content__show"
-                  : "accordion--content"
-              }`}
-            >
-              {answer}
+            <div className="accordion--content-wrapper">
+              <div
+                className={`${
+                  isSelected(i)
+                    ? "accordion--content accordion--content__show"
+                    : "accordion--content"
+                }`}
+              >
+                {answer}
+              </div>
             </div>
           </div>
         )

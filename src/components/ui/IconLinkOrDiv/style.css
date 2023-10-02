@@ -1,0 +1,15 @@
+.icon-wrapper {
+  border-radius: 0.8rem;
+  border: solid 1px white;
+  padding: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  max-width: fit-content;
+}
+
+.icon-wrapper img {
+  width: 30px;
+  object-fit: contain;
+}

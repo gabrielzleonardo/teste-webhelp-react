@@ -1,29 +1,80 @@
-import "./style.css"
+import "./style.css";
 import AutoLink from "../../nav/AutoLink";
+import Data from "../../../Data";
+import { IFooterLink } from "../../../types";
+
+import IconLinkOrDiv from "../../ui/IconLinkOrDiv";
 const Footer = () => {
+  const { footer } = Data;
+  const { aboutNav, contactNav, paymentMethods } = footer;
   return (
     <footer>
       <div className="container">
         <div className="image-wrapper">
           <img src="/images/webhelp-2.svg" alt="Logo branca Webhelp" />
         </div>
-        <div className="footer-nav">
+        <div className="footer-nav about-nav">
           <p>
-            <strong>Sobre</strong>
+            <strong>{aboutNav.navTitle}</strong>
           </p>
           <ul>
-            <li>
-              <AutoLink href="#">Quem somos</AutoLink>
-            </li>
-            <li>
-              <a href="#">Política de privacidade</a>
-            </li>
+            {aboutNav.navLinks.map(({ id, title, href }: IFooterLink) => (
+              <li key={id}>
+                <AutoLink href={href} title={title}>
+                  {title}
+                </AutoLink>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="footer-nav">
+        <div className="footer-nav contact-nav">
           <p>
-            <strong>Fale com a gente</strong>
+            <strong>{contactNav.navTitle}</strong>
           </p>
+
+          <ul>
+            {contactNav.navLinks.map(({ id, image, href }: IFooterLink) => (
+              <li key={id}>
+                <IconLinkOrDiv image={image} href={href} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="footer-nav payments-nav">
+          <p>
+            <strong>{paymentMethods.title}</strong>
+          </p>
+
+          <ul>
+            {paymentMethods.methods.map(
+              ({ methodImage, id }: { methodImage: string; id: number }) => (
+                <li key={id}>
+                  <IconLinkOrDiv image={methodImage} />
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+        <p>© 2023. Todos direitos reservados à Webhelp</p>
+        <div className="under-footer">
+          <div>
+            <img
+              width={50}
+              height={29}
+              src="/images/webhelp-2.svg"
+              alt="Logo webhelp"
+            />
+            <p>
+              plataforma desenvolvida pela <strong>webhelp</strong>
+            </p>
+          </div>
+          <div>
+            <img width={32} height={32} src="images/ssl.png" alt="SSL" />
+            <div>
+              <strong>Site protegido</strong>
+              <span>certificado SSL</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

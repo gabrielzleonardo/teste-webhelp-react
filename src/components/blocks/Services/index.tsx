@@ -1,6 +1,7 @@
 import "./style.css";
 import ServiceCard from "../../ui/Cards/ServiceCard";
-import IconLink from "../../ui/IconLink";
+import ChevronAnchorLink from "../../nav/ChevronAnchorLink";
+
 const Services = () => {
   return (
     <section id="services" className="services">
@@ -33,10 +34,7 @@ const Services = () => {
           <img src="/images/chat.webp" alt="imagem de um chat" />
         </div>
       </div>
-      <IconLink
-        imageSrc="/images/chevron-down.svg"
-        link={{ href: "#get-started", className: "anchor" }}
-      />
+      <ChevronAnchorLink href="#get-started" />
     </section>
   );
 };
