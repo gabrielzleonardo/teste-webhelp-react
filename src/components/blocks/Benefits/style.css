@@ -27,30 +27,94 @@ section.benefits {
   max-height: 300px;
 }
 
-.card-1 {
+.benefits .card-1 {
   background-color: white;
   color: var(--gray-950);
 }
 
-.card-1 p,
+.benefits .card-1 p,
 .card-3 p {
   font-size: 2.2rem;
 }
 
-.card-1 img {
+.benefits .card-1 img {
   aspect-ratio: 1/1;
   max-width: 12rem;
 }
 
-.card-2,
+.benefits .card-2,
 .card-3 {
   color: var(--fc-quinary);
 }
 
-.card-2 {
+.benefits .card-2 {
   background-color: var(--gray-950);
 }
 
-.card-3 {
+.benefits .card-3 {
   background-color: #4d697c;
+}
+
+@media (min-width: 1024px) {
+  .benefits h2 {
+    font-size: 4rem;
+  }
+  .benefits .cards-wrapper {
+    display: grid;
+
+    grid-template-areas:
+      "A C"
+      "B C"
+      "D D";
+    grid-auto-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr fit-content(90%);
+  }
+
+  .cards-wrapper div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards-wrapper div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards-wrapper div:nth-child(3) {
+    grid-area: C;
+  }
+  .cards-wrapper div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards-wrapper div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .benefits .cards-wrapper .card {
+    min-width: unset;
+    max-width: unset;
+    max-height: unset;
+  }
+
+  .card-1 p,
+  .card-3 p {
+    font-size: 2.4rem;
+  }
+
+  .benefits .card-2 {
+    padding-bottom: 0;
+  }
+  div .card.card-3 {
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding: 4rem 5rem 0;
+  }
+  .benefits .card-3 p {
+    font-size: 4rem;
+  }
+
+  .card-2 img {
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+  }
 }

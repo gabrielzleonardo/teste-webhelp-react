@@ -1,15 +1,4 @@
-section.services h2 {
-  font-family: var(--ff-trenda-700);
-  color: var(--fc-primary);
-  font-size: 2.8rem;
-  margin-bottom: 6px;
-}
 
-.services .title-wrapper {
-  text-align: center;
-  color: var(--gray-700);
-  font-size: 1.8rem;
-}
 
 .services .cards-wrapper {
   display: flex;
@@ -18,10 +7,16 @@ section.services h2 {
   gap: 2rem;
 }
 
+.services .cards-wrapper .card {
+  flex-grow: 1;
+  flex-basis: 450px;
+}
+
 .services .card.card-1 {
   background-color: var(--gray-100);
   color: var(--gray-950);
-  padding: 4rem 5rem
+  padding: 4rem 5rem;
+  gap: 6rem;
 }
 
 .services .card.card-1 p {
@@ -36,9 +31,23 @@ section.services h2 {
 }
 
 .services .card.card-1 img {
-  aspect-ratio: 3/2;
   min-width: 100%;
   height: auto;
-  margin-top: 6rem;
   object-fit: contain;
+}
+
+@media (min-width: 628px) {
+  .services .card.card-1 {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .services .card.card-1 p {
+    font-size: 4rem;
+  }
+  .services .card.card-1 img {
+    min-width: unset;
+    max-width: 100%;
+  }
 }
