@@ -18,7 +18,7 @@ const Accordion = ({ questions }: IAccordion) => {
 
   return (
     <div className="accordion">
-      {questions.map(
+      {questions?.map(
         (
           { questionTitle: question, questionAnswer: answer, id }: IQuestion,
           i: number

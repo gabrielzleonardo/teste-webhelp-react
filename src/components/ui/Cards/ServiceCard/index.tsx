@@ -18,7 +18,7 @@ const ServiceCard = ({
       className="service-card card"
       style={{ backgroundImage: `url(${backgroundImagePath})`, backgroundSize: "cover" }}
     >
-      <img src={imageSrc} alt={imageAlt || "Imagem"} />
+      <img width={80} height={80} src={imageSrc} alt={imageAlt || "Imagem"} />
       <div>
         <span>{description}</span>
         <p>{title}</p>

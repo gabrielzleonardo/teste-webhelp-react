@@ -1,4 +1,4 @@
-import LoginForm from "../../global/forms/LoginForm";
+import LoginForm from "../../global/Forms/LoginForm";
 import AutoLink from "../../nav/AutoLink";
 
 import "./style.css";
@@ -17,7 +17,7 @@ const BannerOne = () => {
         title="Saiba mais"
         className="mouse-anchor-wrapper"
       >
-        <img src="/images/mouse-icon.svg" alt="Ícone de um mouse" />
+        <img width={32} height={32} src="/images/mouse-icon.svg" alt="Ícone de um mouse" />
         <span>Saiba mais</span>
       </AutoLink>
     </section>

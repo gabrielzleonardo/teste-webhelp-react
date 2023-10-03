@@ -51,7 +51,7 @@ const GetStarted = ({ title, label, cards }: IGetStarted) => {
       </div>
       <div className="cards-wrapper">
         <div ref={carouselRef} className="carousel container">
-          {cards.map((card, i: number) => (
+          {cards?.map((card, i: number) => (
             <GetStartedCard key={card.id} i={i} {...card} />
           ))}
         </div>

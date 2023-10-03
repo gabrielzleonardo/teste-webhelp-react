@@ -3,12 +3,18 @@ import Benefits from "../blocks/Benefits";
 import Services from "../blocks/Services";
 import GetStarted from "../blocks/GetStarted";
 import Faq from "../blocks/Faq";
+import { IContent } from "../../types";
 
-const InnerBlocks = ({ content }: any) => {
+
+
+
+
+
+const InnerBlocks = ({ content }: { content: [] }) => {
   if (!content) {
     return null;
   }
-  return content.map((block: any) => {
+  return content.map((block: IContent ) => {
     switch (block.type) {
       case "bannerOne":
         return <BannerOne key={block.id} {...block} />;

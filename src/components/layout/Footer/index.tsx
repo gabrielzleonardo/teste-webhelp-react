@@ -10,16 +10,20 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div className="image-wrapper">
-          <img src="/images/webhelp-2.svg" alt="Logo branca Webhelp" />
-        </div>
+        <a
+          target="__blank"
+          href="https://jobsbrasil.webhelp.com/"
+          className="image-wrapper"
+        >
+          <img width={50} height={29} src="/images/webhelp-2.svg" alt="Logo branca Webhelp" />
+        </a>
         <div className="navs-wrapper">
           <div className="footer-nav about-nav">
             <p>
               <strong>{aboutNav.navTitle}</strong>
             </p>
             <ul>
-              {aboutNav.navLinks.map(({ id, title, href }: IFooterLink) => (
+              {aboutNav?.navLinks?.map(({ id, title, href }: IFooterLink) => (
                 <li key={id}>
                   <AutoLink href={href} title={title}>
                     {title}
@@ -34,7 +38,7 @@ const Footer = () => {
             </p>
 
             <ul>
-              {contactNav.navLinks.map(({ id, image, href }: IFooterLink) => (
+              {contactNav?.navLinks?.map(({ id, image, href }: IFooterLink) => (
                 <li key={id}>
                   <IconLinkOrDiv image={image} href={href} />
                 </li>
@@ -47,7 +51,7 @@ const Footer = () => {
             </p>
 
             <ul>
-              {paymentMethods.methods.map(
+              {paymentMethods?.methods?.map(
                 ({ methodImage, id }: { methodImage: string; id: number }) => (
                   <li key={id}>
                     <IconLinkOrDiv image={methodImage} />
@@ -61,7 +65,7 @@ const Footer = () => {
         <div className="copyright-wrapper">
           <p>© 2023. Todos direitos reservados à Webhelp</p>
           <div className="under-footer">
-            <div>
+            <a href="https://jobsbrasil.webhelp.com/">
               <img
                 width={50}
                 height={29}
@@ -71,7 +75,7 @@ const Footer = () => {
               <p>
                 plataforma desenvolvida pela <strong>webhelp</strong>
               </p>
-            </div>
+            </a>
             <div>
               <img width={32} height={32} src="images/ssl.png" alt="SSL" />
               <div>
