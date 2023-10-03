@@ -9,7 +9,8 @@ const TextInput = ({
   type,
   value,
   onChange,
-  ...rest
+  maxLength,
+  
 }: ITextInput) => {
   return (
     <div className="text-input-wrapper">
@@ -20,7 +21,8 @@ const TextInput = ({
         placeholder={placeholder}
         type={type || "text"}
         onChange={onChange}
-        {...rest}
+        name={label}
+        maxLength={maxLength}
       />
       <label>{label}</label>
     </div>

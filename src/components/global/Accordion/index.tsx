@@ -18,7 +18,7 @@ const Accordion = ({ questions }: IAccordion) => {
 
   return (
     <div className="accordion">
-      {questions.map(
+      {questions?.map(
         (
           { questionTitle: question, questionAnswer: answer, id }: IQuestion,
           i: number
@@ -33,7 +33,9 @@ const Accordion = ({ questions }: IAccordion) => {
               <h3>{question}</h3>
               <button
                 className={isSelected(i) ? "rotate" : ""}
-               
+                aria-label={
+                  isSelected(i) ? "esconder a resposta" : "ver a resposta"
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

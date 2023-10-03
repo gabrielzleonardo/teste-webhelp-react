@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column-reverse;
   gap: 0.4rem;
+  position: relative;
 }
 
 .text-input-wrapper label {
@@ -48,4 +49,7 @@
 .text-input-wrapper .alert {
   color: var(--cool-gray-600);
   font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(calc(100% + 0.2rem));
 }

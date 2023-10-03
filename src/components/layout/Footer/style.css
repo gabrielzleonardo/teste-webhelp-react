@@ -50,18 +50,18 @@ footer div.navs-wrapper {
   gap: 2rem;
 }
 
-.under-footer > div {
+.under-footer > div, .under-footer > a {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.under-footer > div:first-child {
+.under-footer > a:first-child {
   font-size: 1rem;
   max-width: 175px;
 }
 
-.under-footer > div:first-child strong {
+.under-footer > a:first-child strong {
   font-family: var(--ff-trenda-600);
 }
 

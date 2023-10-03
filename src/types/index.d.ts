@@ -12,6 +12,7 @@ export interface ITextInput {
   type?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  maxLength?: number;
 }
 
 export interface IAutoLink {
@@ -63,6 +64,8 @@ export interface IContent {
   id: number;
   title?: string;
   label?: string;
+  cards?: ICard[];
+  questions?: IQuestion[];
 }
 export interface IBannerOne extends IContent {
   title: string;
@@ -78,7 +81,7 @@ export interface IServices extends IContent {
 }
 
 export interface IGetStarted extends IContent {
-  cards: ICard[];
+  cards?: ICard[];
 }
 
 export interface IQuestion {
@@ -92,5 +95,5 @@ export interface IAccordion {
 }
 
 export interface IFaq extends IContent {
-  questions: IQuestion[];
+  questions?: IQuestion[];
 }

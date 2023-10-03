@@ -10,7 +10,7 @@ const GetStartedCard = ({ i, cardImage, cardLabel, cardTitle }: ICard) => {
         <p className="card-title">{cardTitle}</p>
         <span className="card-label">{cardLabel}</span>
       </div>
-      <img src={cardImage} alt="Imagem" />
+      <img width={160} height={160} src={cardImage} alt="Imagem" />
     </div>
   );
 };

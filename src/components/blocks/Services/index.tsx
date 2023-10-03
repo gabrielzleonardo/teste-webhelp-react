@@ -31,7 +31,7 @@ const Services = () => {
               <span>Chat</span> Online
             </p>
           </div>
-          <img src="/images/chat.webp" alt="imagem de um chat" />
+          <img width={364} height={193} src="/images/chat.webp" alt="imagem de um chat" />
         </div>
       </div>
       <ChevronAnchorLink href="#get-started" />
