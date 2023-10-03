@@ -33,7 +33,9 @@ const Accordion = ({ questions }: IAccordion) => {
               <h3>{question}</h3>
               <button
                 className={isSelected(i) ? "rotate" : ""}
-               
+                aria-label={
+                  isSelected(i) ? "esconder a resposta" : "ver a resposta"
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
