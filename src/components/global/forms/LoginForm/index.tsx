@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import "./style.css";
 import Button from "../../../ui/Button";
 import TextInput from "../../../ui/Inputs/TextInput";
@@ -30,41 +30,41 @@ const LoginForm = () => {
     return emptyFields.includes(field);
   };
 
-   const handleFormSubmit = (e: SyntheticEvent) => {
-     e.preventDefault();
-   const emptyFields: string[] = [];
+  const handleFormSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    const emptyFields: string[] = [];
 
-   if (activeForm === "pf") {
-     if (!formFields.cpf || formFields.cpf.length < 14) {
-       emptyFields.push("cpf");
-     }
+    if (activeForm === "pf") {
+      if (!formFields.cpf || formFields.cpf.length < 14) {
+        emptyFields.push("cpf");
+      }
 
-     if (!formFields.birthDate || formFields.birthDate?.length < 10) {
-       emptyFields.push("birthDate");
-     }
-   } else {
-     if (!!formFields.cnpj || formFields.cnpj.length < 18) {
-       emptyFields.push("cnpj");
-     }
+      if (!formFields.birthDate || formFields.birthDate?.length < 10) {
+        emptyFields.push("birthDate");
+      }
+    } else {
+      if (!!formFields.cnpj || formFields.cnpj.length < 18) {
+        emptyFields.push("cnpj");
+      }
 
-     if (!formFields.stateRegistration) {
-       emptyFields.push("stateRegistration");
-     }
-   }
+      if (!formFields.stateRegistration) {
+        emptyFields.push("stateRegistration");
+      }
+    }
 
-   setEmptyFields(emptyFields);
+    setEmptyFields(emptyFields);
 
-     if (emptyFields.length > 0) {
-       return;
-     } else {
-       if (activeForm === "pf") {
-         console.log("PF", formFields);
-       } else {
-         console.log("PJ", formFields);
-       }
-       alert("Formulário enviado com sucesso! Dados no console");
-     }
-   };
+    if (emptyFields.length > 0) {
+      return;
+    } else {
+      if (activeForm === "pf") {
+        console.log("PF", formFields);
+      } else {
+        console.log("PJ", formFields);
+      }
+      alert("Formulário enviado com sucesso! Dados no console");
+    }
+  };
 
   function CPFFormatter(cpf: string) {
     cpf = cpf.replace(/[^\d]/g, "");
@@ -86,8 +86,6 @@ const LoginForm = () => {
       "$1.$2.$3/$4-$5"
     );
   };
-
- 
 
   return (
     <form className="login-form">
@@ -172,11 +170,7 @@ const LoginForm = () => {
           />
         </div>
         <Button
-          onClick={(e) => {
-            validateForm();
-
-            handleFormSubmit(e);
-          }}
+          onClick={(e) => handleFormSubmit(e)}
           isLarge
           label="Entrar"
           className="primary-button"
