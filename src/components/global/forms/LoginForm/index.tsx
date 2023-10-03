@@ -1,31 +1,52 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import "./style.css";
 import Button from "../../../ui/Button";
-import TextInput from "../../../ui/inputs/TextInput";
+import TextInput from "../../../ui/Inputs/TextInput";
+
+interface IFormFields {
+  cpf: string;
+  birthDate: string;
+  cnpj: string;
+  stateRegistration: string;
+}
 
 const LoginForm = () => {
-  const [activeForm, setActiveForm] = useState("Pessoa física");
-  const [cpf, setCpf] = useState("");
-  const [cnpj, setCnpj] = useState("");
-  const [birthDate, setBirthDate] = useState("");
-  const [stateRegistration, setStateRegistration] = useState("");
+  const [activeForm, setActiveForm] = useState("pf");
+  const [formFields, setFormFields] = useState<IFormFields>({} as IFormFields);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
 
-  const validateForm = () => {
-    const emptyFields = [];
+  const handleInputChange = (e: SyntheticEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
 
-    if (activeForm === "Pessoa física") {
-      if (cpf === "") {
+    setFormFields({ ...formFields, [name]: value });
+  };
+
+  const handleFormChange = () => {
+    setActiveForm(activeForm === "pf" ? "pj" : "pf");
+    setFormFields({} as IFormFields);
+  };
+
+  const checkEmptyField = (field: string) => {
+    return emptyFields.includes(field);
+  };
+
+  const checkEmptyFields = () => {
+    const emptyFields: string[] = [];
+
+    if (activeForm === "pf") {
+      if (!formFields.cpf || formFields.cpf.length < 14) {
         emptyFields.push("cpf");
       }
-      if (birthDate === "") {
+
+      if (formFields.birthDate === "" || formFields.birthDate?.length < 10) {
         emptyFields.push("birthDate");
       }
     } else {
-      if (cnpj === "") {
+      if (!!formFields.cnpj || formFields.cnpj.length < 18) {
         emptyFields.push("cnpj");
       }
-      if (stateRegistration === "") {
+
+      if (!formFields.stateRegistration) {
         emptyFields.push("stateRegistration");
       }
     }
@@ -33,8 +54,27 @@ const LoginForm = () => {
     setEmptyFields(emptyFields);
   };
 
-  const checkEmptyField = (fieldName: string) => {
-    return emptyFields.includes(fieldName);
+  console.log(emptyFields);
+
+  function CPFFormatter(cpf: string) {
+    cpf = cpf.replace(/[^\d]/g, "");
+
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+  }
+
+  const formatDate = (date: string) => {
+    date = date.replace(/[^\d]/g, "");
+
+    return date.replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3");
+  };
+
+  const formatCNPJ = (cnpj: string) => {
+    cnpj = cnpj.replace(/[^\d]/g, "");
+
+    return cnpj.replace(
+      /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
+      "$1.$2.$3/$4-$5"
+    );
   };
 
   return (
@@ -44,68 +84,77 @@ const LoginForm = () => {
         <div className="form-selector-wrapper">
           <Button
             label="Pessoa física"
-            onClick={() => {
-              setActiveForm("Pessoa física");
-            }}
+            onClick={handleFormChange}
             className={
-              activeForm === "Pessoa física"
-                ? "primary-button"
-                : "secondary-button"
+              activeForm === "pf" ? "primary-button" : "secondary-button"
             }
           />
           <Button
-            label="Pessoa juridica"
-            onClick={() => {
-              setActiveForm("Pessoa jurídica");
-            }}
+            label="Pessoa jurídica"
+            onClick={handleFormChange}
             className={
-              activeForm === "Pessoa jurídica"
-                ? "primary-button"
-                : "secondary-button"
+              activeForm === "pj" ? "primary-button" : "secondary-button"
             }
           />
         </div>
         <div
           className="form-wrapper"
-          style={{ display: activeForm === "Pessoa física" ? "" : "none" }}
+          style={{ display: activeForm === "pf" ? "" : "none" }}
         >
           <TextInput
             alertIsOpen={checkEmptyField("cpf")}
-            value={cpf}
+            value={formFields.cpf}
             label="CPF"
             placeholder="000.000.000-00"
-            onChange={(e) => setCpf(e.target.value.replace(/\D/g, ""))}
+            onChange={(e) =>
+              setFormFields({
+                ...formFields,
+                cpf: CPFFormatter(e.target.value),
+              })
+            }
+            maxLength={11}
           />
           <TextInput
             alertIsOpen={checkEmptyField("birthDate")}
-            onChange={(e) => setBirthDate(e.target.value)}
-            value={birthDate}
+            value={formFields.birthDate}
             label="Data de nascimento"
             placeholder="00/00/0000"
-            type="number"
+            onChange={(e) =>
+              setFormFields({
+                ...formFields,
+                birthDate: formatDate(e.target.value),
+              })
+            }
+            maxLength={10}
           />
         </div>
         <div
           className="form-wrapper"
-          style={{ display: activeForm === "Pessoa jurídica" ? "" : "none" }}
+          style={{ display: activeForm === "pj" ? "" : "none" }}
         >
           <TextInput
             alertIsOpen={checkEmptyField("cnpj")}
-            onChange={(e) => setCnpj(e.target.value.replace(/\D/g, ""))}
-            value={cnpj}
+            onChange={(e) =>
+              setFormFields({
+                ...formFields,
+                cnpj: formatCNPJ(e.target.value),
+              })
+            }
+            maxLength={14}
+            value={formFields.cnpj}
             label="CNPJ"
             placeholder="00.000.000/0000-00"
           />
           <TextInput
             alertIsOpen={checkEmptyField("stateRegistration")}
-            onChange={(e) => setStateRegistration(e.target.value)}
-            value={stateRegistration}
+            onChange={(e) => handleInputChange(e)}
+            value={formFields.stateRegistration}
             label="Inscrição estadual"
             placeholder="isento"
           />
         </div>
         <Button
-          onClick={() => validateForm()}
+          onClick={checkEmptyFields}
           isLarge
           label="Entrar"
           className="primary-button"

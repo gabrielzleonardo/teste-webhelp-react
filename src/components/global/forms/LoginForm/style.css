@@ -18,9 +18,9 @@
   gap: 1rem;
 }
 
-.form-selector-wrapper button {
+.form-selector-wrapper  {
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .form-wrapper {

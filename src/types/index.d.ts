@@ -12,6 +12,7 @@ export interface ITextInput {
   type?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  maxLength?: number;
 }
 
 export interface IAutoLink {
