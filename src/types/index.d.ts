@@ -91,7 +91,7 @@ export interface IQuestion {
 }
 
 export interface IAccordion {
-  questions: IQuestion[];
+  questions?: IQuestion[];
 }
 
 export interface IFaq extends IContent {
