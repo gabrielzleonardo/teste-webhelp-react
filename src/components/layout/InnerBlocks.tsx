@@ -5,6 +5,7 @@ import GetStarted from "../blocks/GetStarted";
 import Faq from "../blocks/Faq";
 import { IContent } from "../../types";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InnerBlocks = ({ content }: { content: any }) => {
   if (!content) {
     return null;

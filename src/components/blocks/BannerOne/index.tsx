@@ -1,4 +1,4 @@
-import LoginForm from "../../global/Forms/LoginForm";
+import LoginForm from "../../global/forms/LoginForm";
 import AutoLink from "../../nav/AutoLink";
 
 import "./style.css";

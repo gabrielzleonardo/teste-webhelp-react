@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from "react";
 import "./style.css";
 import Button from "../../../ui/Button";
-import TextInput from "../../../ui/Inputs/TextInput";
+import TextInput from "../../../ui/inputs/TextInput";
 
 interface IFormFields {
   cpf: string;
