@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import "./style.css";
 import Button from "../../../ui/Button";
 import TextInput from "../../../ui/Inputs/TextInput";
@@ -23,38 +23,48 @@ const LoginForm = () => {
 
   const handleFormChange = () => {
     setActiveForm(activeForm === "pf" ? "pj" : "pf");
-    setFormFields({} as IFormFields);
+    setEmptyFields([]);
   };
 
   const checkEmptyField = (field: string) => {
     return emptyFields.includes(field);
   };
 
-  const checkEmptyFields = () => {
-    const emptyFields: string[] = [];
+   const handleFormSubmit = (e: SyntheticEvent) => {
+     e.preventDefault();
+   const emptyFields: string[] = [];
 
-    if (activeForm === "pf") {
-      if (!formFields.cpf || formFields.cpf.length < 14) {
-        emptyFields.push("cpf");
-      }
+   if (activeForm === "pf") {
+     if (!formFields.cpf || formFields.cpf.length < 14) {
+       emptyFields.push("cpf");
+     }
 
-      if (formFields.birthDate === "" || formFields.birthDate?.length < 10) {
-        emptyFields.push("birthDate");
-      }
-    } else {
-      if (!!formFields.cnpj || formFields.cnpj.length < 18) {
-        emptyFields.push("cnpj");
-      }
+     if (!formFields.birthDate || formFields.birthDate?.length < 10) {
+       emptyFields.push("birthDate");
+     }
+   } else {
+     if (!!formFields.cnpj || formFields.cnpj.length < 18) {
+       emptyFields.push("cnpj");
+     }
 
-      if (!formFields.stateRegistration) {
-        emptyFields.push("stateRegistration");
-      }
-    }
+     if (!formFields.stateRegistration) {
+       emptyFields.push("stateRegistration");
+     }
+   }
 
-    setEmptyFields(emptyFields);
-  };
+   setEmptyFields(emptyFields);
 
-  console.log(emptyFields);
+     if (emptyFields.length > 0) {
+       return;
+     } else {
+       if (activeForm === "pf") {
+         console.log("PF", formFields);
+       } else {
+         console.log("PJ", formFields);
+       }
+       alert("Formulário enviado com sucesso! Dados no console");
+     }
+   };
 
   function CPFFormatter(cpf: string) {
     cpf = cpf.replace(/[^\d]/g, "");
@@ -76,6 +86,8 @@ const LoginForm = () => {
       "$1.$2.$3/$4-$5"
     );
   };
+
+ 
 
   return (
     <form className="login-form">
@@ -106,12 +118,13 @@ const LoginForm = () => {
             value={formFields.cpf}
             label="CPF"
             placeholder="000.000.000-00"
-            onChange={(e) =>
+            onChange={(e) => {
               setFormFields({
                 ...formFields,
                 cpf: CPFFormatter(e.target.value),
-              })
-            }
+              });
+              emptyFields.splice(emptyFields.indexOf("cpf"), 1);
+            }}
             maxLength={11}
           />
           <TextInput
@@ -119,12 +132,13 @@ const LoginForm = () => {
             value={formFields.birthDate}
             label="Data de nascimento"
             placeholder="00/00/0000"
-            onChange={(e) =>
+            onChange={(e) => {
               setFormFields({
                 ...formFields,
                 birthDate: formatDate(e.target.value),
-              })
-            }
+              });
+              emptyFields.splice(emptyFields.indexOf("birthDate"), 1);
+            }}
             maxLength={10}
           />
         </div>
@@ -134,12 +148,13 @@ const LoginForm = () => {
         >
           <TextInput
             alertIsOpen={checkEmptyField("cnpj")}
-            onChange={(e) =>
+            onChange={(e) => {
               setFormFields({
                 ...formFields,
                 cnpj: formatCNPJ(e.target.value),
-              })
-            }
+              });
+              emptyFields.splice(emptyFields.indexOf("cnpj"), 1);
+            }}
             maxLength={14}
             value={formFields.cnpj}
             label="CNPJ"
@@ -147,14 +162,21 @@ const LoginForm = () => {
           />
           <TextInput
             alertIsOpen={checkEmptyField("stateRegistration")}
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => {
+              handleInputChange(e);
+              emptyFields.splice(emptyFields.indexOf("stateRegistration"), 1);
+            }}
             value={formFields.stateRegistration}
             label="Inscrição estadual"
             placeholder="isento"
           />
         </div>
         <Button
-          onClick={checkEmptyFields}
+          onClick={(e) => {
+            validateForm();
+
+            handleFormSubmit(e);
+          }}
           isLarge
           label="Entrar"
           className="primary-button"
