@@ -26,8 +26,8 @@ const LoginForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const handleFormChange = () => {
-    setActiveForm(activeForm === "pf" ? "pj" : "pf");
+  const handleFormChange = (formToBeActived: string) => {
+    setActiveForm(formToBeActived);
     setEmptyFields([]);
   };
 
@@ -78,14 +78,14 @@ const LoginForm = () => {
         <div className="form-selector-wrapper">
           <Button
             label="Pessoa física"
-            onClick={handleFormChange}
+            onClick={() => handleFormChange("pf")}
             className={
               activeForm === "pf" ? "primary-button" : "secondary-button"
             }
           />
           <Button
             label="Pessoa jurídica"
-            onClick={handleFormChange}
+            onClick={() => handleFormChange("pj")}
             className={
               activeForm === "pj" ? "primary-button" : "secondary-button"
             }
